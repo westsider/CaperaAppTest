@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,57 +13,115 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="ARView" customClass="ViewController" customModule="TinyToyTank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SUU-aT-4Uy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="py9-Jp-Wmk">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </arView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njE-Sa-WHn" userLabel="TankRight">
-                                <rect key="frame" x="314" y="799" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="TankRight"/>
-                                <connections>
-                                    <action selector="tankRightPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bx8-pC-X3c"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngo-US-6rx">
-                                <rect key="frame" x="226" y="799" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="TankForward"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Pg-O8t">
-                                <rect key="frame" x="138" y="799" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="TankLeft"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLT-Mf-5A4">
-                                <rect key="frame" x="138" y="703" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="TurretLeft"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPJ-71-cHV">
-                                <rect key="frame" x="226" y="703" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="CannonFire"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg2-RI-GIp">
-                                <rect key="frame" x="314" y="703" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                <state key="normal" title="Button" image="TurretRight"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="rwZ-aS-W7P">
+                                <rect key="frame" x="99" y="600" width="256" height="178"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kWl-3z-IbN" userLabel="Top Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLT-Mf-5A4" userLabel="turretLeft">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="Lt8-tx-YBp"/>
+                                                    <constraint firstAttribute="height" constant="80" id="mR8-NW-euH"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="TurretLeft"/>
+                                                <connections>
+                                                    <action selector="turretLeftPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CMN-RO-yBA"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZPJ-71-cHV">
+                                                <rect key="frame" x="88" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="LCq-Ef-cTi"/>
+                                                    <constraint firstAttribute="height" constant="80" id="naQ-NY-sU3"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="CannonFire"/>
+                                                <connections>
+                                                    <action selector="cannonFirePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o8w-gt-rZf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg2-RI-GIp">
+                                                <rect key="frame" x="176" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="7bd-7M-Iog"/>
+                                                    <constraint firstAttribute="height" constant="80" id="mKk-Kd-fCh"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="TurretRight"/>
+                                                <connections>
+                                                    <action selector="turretRightPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dCO-rr-2Aq"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Kwt-YJ-VwQ" userLabel="BottomStack">
+                                        <rect key="frame" x="0.0" y="98" width="256" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViO-Pg-O8t">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="LzA-0X-S75"/>
+                                                    <constraint firstAttribute="width" constant="80" id="wee-qz-jmc"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="TankLeft"/>
+                                                <connections>
+                                                    <action selector="tankLeftPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ge-jm-qT7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngo-US-6rx">
+                                                <rect key="frame" x="88" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="c5I-fm-re5"/>
+                                                    <constraint firstAttribute="height" constant="80" id="j8F-eY-8a5"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="TankForward"/>
+                                                <connections>
+                                                    <action selector="tankForwardPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QQy-HG-YHZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="njE-Sa-WHn" userLabel="TankRight">
+                                                <rect key="frame" x="176" y="0.0" width="80" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="LKL-sg-Upf"/>
+                                                    <constraint firstAttribute="width" constant="80" id="QxR-fd-Mbm"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="TankRight"/>
+                                                <connections>
+                                                    <action selector="tankRightPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bx8-pC-X3c"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7L6-OW-J8w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rwZ-aS-W7P" firstAttribute="bottom" secondItem="7L6-OW-J8w" secondAttribute="bottom" id="FEb-p1-JyY"/>
+                            <constraint firstItem="7L6-OW-J8w" firstAttribute="trailing" secondItem="rwZ-aS-W7P" secondAttribute="trailing" constant="20" id="jJu-Qr-KHU"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="arView" destination="py9-Jp-Wmk" id="UG5-oZ-mQk"/>
+                        <outlet property="fireBttn" destination="ZPJ-71-cHV" id="nLp-HM-64f"/>
+                        <outlet property="tankForewardBttn" destination="ngo-US-6rx" id="dA3-RJ-XAN"/>
+                        <outlet property="tankLeftBttn" destination="ViO-Pg-O8t" id="wXl-Mj-XWG"/>
+                        <outlet property="tankRightBttn" destination="njE-Sa-WHn" id="EP4-F0-EGW"/>
+                        <outlet property="turretLeft" destination="QLT-Mf-5A4" id="jdz-qV-o4q"/>
+                        <outlet property="turretRightBttn" destination="eg2-RI-GIp" id="nM8-xg-ttu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+            <point key="canvasLocation" x="-125" y="83"/>
         </scene>
     </scenes>
     <resources>

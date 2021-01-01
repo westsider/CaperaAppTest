@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8498E33D259A6680004A4EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498E33C259A6680004A4EA4 /* AppDelegate.swift */; };
 		8498E33F259A6680004A4EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8498E33E259A6680004A4EA4 /* ViewController.swift */; };
-		8498E341259A6680004A4EA4 /* Experience.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = 8498E340259A6680004A4EA4 /* Experience.rcproject */; };
 		8498E344259A6680004A4EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8498E342259A6680004A4EA4 /* Main.storyboard */; };
 		8498E346259A6681004A4EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8498E345259A6681004A4EA4 /* Assets.xcassets */; };
 		8498E349259A6681004A4EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8498E347259A6681004A4EA4 /* LaunchScreen.storyboard */; };
@@ -20,7 +19,6 @@
 		8498E339259A6680004A4EA4 /* TinyToyTank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyToyTank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8498E33C259A6680004A4EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8498E33E259A6680004A4EA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8498E340259A6680004A4EA4 /* Experience.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = Experience.rcproject; sourceTree = "<group>"; };
 		8498E343259A6680004A4EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8498E345259A6681004A4EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8498E348259A6681004A4EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				8498E342259A6680004A4EA4 /* Main.storyboard */,
 				8498E33E259A6680004A4EA4 /* ViewController.swift */,
-				8498E340259A6680004A4EA4 /* Experience.rcproject */,
 				8498E352259A682E004A4EA4 /* TinyToyTank.rcproject */,
 				8498E345259A6681004A4EA4 /* Assets.xcassets */,
 				8498E347259A6681004A4EA4 /* LaunchScreen.storyboard */,
@@ -143,7 +140,6 @@
 				8498E33F259A6680004A4EA4 /* ViewController.swift in Sources */,
 				8498E353259A682E004A4EA4 /* TinyToyTank.rcproject in Sources */,
 				8498E33D259A6680004A4EA4 /* AppDelegate.swift in Sources */,
-				8498E341259A6680004A4EA4 /* Experience.rcproject in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
