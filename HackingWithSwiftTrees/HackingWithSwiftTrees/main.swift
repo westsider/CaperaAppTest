@@ -96,4 +96,10 @@ let terry = Node("Terry") {
     }
 }
 
-print(terry.count)
+example(of: "Creating a tree") {
+    var beverages = Node("Beverages")
+    let sophie = Node("Hot")
+    let charlotte = Node("Cold")
+    beverages.add(child: sophie)
+    beverages.add(child: charlotte)
+}

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestTarget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pot-Xe-o4R">
+                                <rect key="frame" x="57" y="93" width="300" height="710"/>
+                                <subviews>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vmi-ML-ScY">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8kn-i1-2xi"/>
+                                            <constraint firstAttribute="width" constant="300" id="K3g-TK-Qtz"/>
+                                        </constraints>
+                                        <state key="normal" title="Typing">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fyI-I7-EA7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FhF-SV-FLl">
+                                        <rect key="frame" x="0.0" y="90" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="Xbl-jM-Gs4"/>
+                                            <constraint firstAttribute="width" constant="300" id="hi6-Jn-h1Q"/>
+                                        </constraints>
+                                        <state key="normal" title="David Goggins">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="af2-U5-XYS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h78-xS-EiK">
+                                        <rect key="frame" x="0.0" y="180" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="69Z-1z-WwM"/>
+                                            <constraint firstAttribute="height" constant="80" id="n0g-QH-Ilb"/>
+                                        </constraints>
+                                        <state key="normal" title="Swift Apprentice">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uvI-Nf-EJ6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mJ-1L-Suq">
+                                        <rect key="frame" x="0.0" y="270" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="iIU-aJ-rG5"/>
+                                            <constraint firstAttribute="height" constant="80" id="tIk-69-7oC"/>
+                                        </constraints>
+                                        <state key="normal" title="Swift Algo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A4m-ou-toB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9E-Yd-I42">
+                                        <rect key="frame" x="0.0" y="360" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="akA-Sz-g0e"/>
+                                            <constraint firstAttribute="height" constant="80" id="mQj-Rr-tY7"/>
+                                        </constraints>
+                                        <state key="normal" title="Meditate">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E2d-Il-Ul4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9u7-ci-gL7">
+                                        <rect key="frame" x="0.0" y="450" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="6YA-yw-rao"/>
+                                            <constraint firstAttribute="height" constant="80" id="Djw-cJ-MGa"/>
+                                        </constraints>
+                                        <state key="normal" title="AR Kit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNU-Yv-kan"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEp-ps-Bre">
+                                        <rect key="frame" x="0.0" y="540" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="DLK-Jo-0AV"/>
+                                            <constraint firstAttribute="height" constant="80" id="PlW-ZC-MzG"/>
+                                        </constraints>
+                                        <state key="normal" title="Mind Podcast">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DaH-jc-XUs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHg-FY-e0f">
+                                        <rect key="frame" x="0.0" y="630" width="300" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="E7y-H3-Jco"/>
+                                            <constraint firstAttribute="width" constant="300" id="FKH-Kc-zwz"/>
+                                        </constraints>
+                                        <state key="normal" title="Journal 10 min">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fm0-MQ-y8Q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pot-Xe-o4R" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XHX-an-baz"/>
+                            <constraint firstItem="Pot-Xe-o4R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xt5-Jn-86L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fiveBttn" destination="DEp-ps-Bre" id="Ird-XD-B6Z"/>
+                        <outlet property="fourBttn" destination="9u7-ci-gL7" id="WXr-G6-ZVX"/>
+                        <outlet property="oneBttn" destination="h78-xS-EiK" id="7c2-JR-x9P"/>
+                        <outlet property="sevenBttn" destination="Vmi-ML-ScY" id="GyL-3H-EJ7"/>
+                        <outlet property="sixBttn" destination="VHg-FY-e0f" id="fYs-Tm-T5A"/>
+                        <outlet property="threeBttn" destination="e9E-Yd-I42" id="xTM-F0-uuE"/>
+                        <outlet property="twoBttn" destination="0mJ-1L-Suq" id="KyE-W4-z0S"/>
+                        <outlet property="zeroBttn" destination="FhF-SV-FLl" id="r6M-T0-5Gq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
