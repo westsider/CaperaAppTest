@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 //// sin(45 * Double.pi / 180)
 //(2.0).squareRoot()
@@ -149,3 +150,402 @@ import Foundation
 //    print(Double(num) * 0.1)
 //}
 
+//func printFullName(firstName: String, lastName:String) {
+//    print("\(firstName) \(lastName)")
+//}
+//
+//printFullName(firstName: "Warren", lastName: "Hansen")
+//
+//func printFullName(_ firstName: String, _ lastName:String) {
+//    print("\(firstName) \(lastName)")
+//}
+//printFullName("War", "Dog")
+//
+//func calculateFullName(firstName: String, lastName:String) -> (full: String, len: Int) {
+//    let name = firstName + " " + lastName
+//    return (full: name, len: name.count)
+//}
+//
+//let name = calculateFullName(firstName: "Rich", lastName: "Kidd")
+
+//func add(_ a: Int, _ b: Int) -> Int {
+//  a + b
+//}
+//var function = add
+//function(4, 4)
+//
+//
+///// add params
+///// - Parameters:
+/////   - function: add func value1 value2
+/////   - a: first
+/////   - b: second
+//func printResult(_ function: (Int, Int) -> Int, _ a: Int, _ b: Int) {
+//  let result = function(a, b)
+//  print(result)
+//}
+//printResult(add, 4, 2)
+
+//for index in stride(from: 10, to: 22, by: 4) {
+//  print(index)
+//}
+//// prints 10, 14, 18
+//
+//for index in stride(from: 10, through: 22, by: 4) {
+//  print(index)
+//}
+// prints 10, 14, 18, and 22
+//for index in stride(from: 10.0, through: 9.0, by: -0.1) {
+//    print(index)
+//}
+
+//func isNumberDivisible<T: Numeric>(_ number: T, by divisor: T) -> T {
+//    number + divisor
+//    //number % divisor == 0
+//}
+
+//@discardableResult
+//func isPrime(_ number: Int) -> Bool {
+//    let max = Int(sqrt(Double(number)))
+//    for num in 2...max {
+//        if isNumberDivisible(number, by: num) {
+//            return false
+//        }
+//    }
+//    return true
+//}
+//
+//isPrime(6)      // false
+//isPrime(13)     // true
+//isPrime(8893)   // true
+
+//func fibonacci(_ number: Int) -> Int {
+//    10
+//}
+//
+//fibonacci(1)  // = 1
+//fibonacci(2)  // = 1
+//fibonacci(3)  // = 2
+//fibonacci(4)  // = 3
+//fibonacci(5)  // = 5
+//fibonacci(10) // = 55
+
+//var myFavoriteSong: String? = "rockets"
+//
+//if let song = myFavoriteSong {
+//    print("the song is \(song)")
+//} else {
+//    print("No Song Found")
+//}
+//
+//func divideIfWhole(_ value: Int, by divisor: Int) -> Int? {
+//    if value % divisor == 0 {
+//        let answer = value / divisor
+//        print("Yep it divides \(answer) times")
+//        return answer
+//    } else {
+//        print("Not divisible :{.")
+//        return nil
+//    }
+//}
+//
+//let answer = divideIfWhole(10, by: 2)
+
+//let strideArray = Array(repeating: 1, count: 6)
+//print(strideArray)
+//var players = ["Alice", "Bob", "Dan", "Eli", "Frank"]
+//print(players.firstIndex(of: "Bob"))
+//
+//print(players)
+//// > ["Alice", "Bob", "Dan", "Eli", "Frank"]
+//if let FrankIndex = players.firstIndex(of: "Frank") {
+//    players[FrankIndex] = "Franklin"
+//    print(players)
+//}
+//// > ["Alice", "Bob", "Dan", "Eli", "Franklin"]
+
+//var players =  ["Anna", "Brian", "Craig", "Dan", "Donna", "Eli", "Franklin"]
+//let scores = [2, 2, 8, 6, 1, 2, 1]
+//
+//for (i, player) in players.enumerated() {
+//    print("\(player) \(scores[i])")
+//}
+
+//var namesAndScores = ["Anna": 2, "Brian": 2, "Craig": 8, "Donna": 6]
+//print(namesAndScores)
+//// > ["Craig": 8, "Anna": 2, "Donna": 6, "Brian": 2]
+//
+//var bobData = [
+//  "name": "Bob",
+//  "profession": "Card Player",
+//  "country": "USA"
+//]
+//bobData.updateValue("CA", forKey: "state")
+//bobData["city"] = "San Francisco"
+//
+//func getCity(from:[String: String]) -> String? {
+//    if let city = from["city"], let state = from["state"]{
+//    return "\(city), \(state)"
+//    } else {
+//        return nil
+//    }
+//}
+//
+//let n = getCity(from: bobData)
+
+//func areCharactersUnique(input: String) -> Bool {
+//    return Set(input).count == input.count
+//}
+//
+//
+//areCharactersUnique(input: "abcdefga")
+//
+//func isPalandrome(input: String) -> Bool {
+//    let lowercased = input.lowercased()
+//    return lowercased == String(lowercased.reversed())
+//}
+//
+//isPalandrome(input: "wannah")
+
+func challenge3a(string1: String, string2: String) -> Bool {
+    var checkString = string2
+
+    for letter in string1 {
+        if let index = checkString.firstIndex(of: letter) {
+            checkString.remove(at: index)
+        } else {
+            return false
+        }
+    }
+    return checkString.count == 0
+}
+
+extension String {
+    func fuzzyContains(_ string: String) -> Bool {
+        return self.uppercased().range(of: string.uppercased()) != nil
+    }
+}
+
+func challenge5a(input: String, count: Character) -> Int {
+    var letterCount = 0
+
+    for letter in input {
+        if letter == count {
+            letterCount += 1
+        }
+    }
+
+    return letterCount
+}
+
+func challenge5d(input: String, count: String) -> Int {
+    let modified = input.replacingOccurrences(of: count, with: "")
+    return input.count - modified.count
+}
+
+func challenge7(input: String) -> String {
+    let components = input.components(separatedBy: .whitespacesAndNewlines)
+    return components.filter { !$0.isEmpty }.joined(separator: " ")
+}
+
+func challenge7a(input: String) -> String {
+    var seenSpace = false
+    var returnValue = ""
+
+        for letter in input {
+            if letter == " " {
+                if seenSpace { continue }
+                seenSpace = true
+            } else {
+                seenSpace = false
+            }
+
+            returnValue.append(letter)
+        }
+
+        return returnValue
+    }
+
+func challenge8(input: String, rotated: String) -> Bool {
+    guard input.count == rotated.count else { return false }
+    let combined = input + input
+    return combined.contains(rotated)
+}
+
+func challenge9(input: String) -> Bool {
+    let set = Set(input.lowercased())
+    let letters = set.filter { $0 >= "a" && $0 <= "z" }
+    return letters.count == 26
+}
+
+func challenge10a(input: String) -> (vowels: Int, consonants: Int) {
+    let vowels = CharacterSet(charactersIn: "aeiou")
+    let consonants = CharacterSet(charactersIn: "bcdfghjklmnpqrstvwxyz")
+    var vowelCount = 0
+    var consonantCount = 0
+
+    for letter in input.lowercased() {
+        let stringLetter = String(letter)
+
+        if stringLetter.rangeOfCharacter(from: vowels) != nil {
+            vowelCount += 1
+        } else if stringLetter.rangeOfCharacter(from: consonants) != nil {
+            consonantCount += 1
+        }
+    }
+    return (vowelCount, consonantCount)
+}
+
+func challenge12(input: String) -> String {
+    let parts = input.components(separatedBy: " ")
+    guard let first = parts.first else { return "" }
+
+    var currentPrefix = ""
+    var bestPrefix = ""
+
+    for letter in first {
+        currentPrefix.append(letter)
+
+        for word in parts {
+            if !word.hasPrefix(currentPrefix) {
+                return bestPrefix
+            }
+        }
+
+        bestPrefix = currentPrefix
+    }
+
+    return bestPrefix
+}
+
+let voidClosure: () -> Void = {
+  print("Swift Apprentice is awesome!")
+}
+voidClosure()
+
+
+
+/*
+ A FunkyNotificationCenter object provides a mechanism for broadcasting
+ information within a program. A FunkyNotificationCenter object is essentially
+ a notification dispatch table.
+
+ Objects register with a notification center to receive notifications
+ (Notification objects) using the add(forName:object:using:) method.
+ Each invocation of this method specifies a notification name.
+ Objects may register as observers of different notification
+ name by calling this method several times.
+
+ Objects can post notifications using the post(name:) method. All objects
+ registered to the notification name will have their correpsonding
+ closure executed.
+
+ Objects can unregister itself from one or all notifications by using the
+ remove(forName:object:) method.
+
+ */
+
+/*
+ class FunkyNotificationCenter {
+     
+     /**
+     The default FunkyNotificationCenter singleton
+     */
+     static var defaultCenter = FunkyNotificationCenter()
+
+   var names: [String: [((String) -> Void)]]?
+     /**
+     Add the given observer object to the notification name. When the given notification name
+     is posted, the given `using` closure should be executed.
+     
+     - Parameters:
+         - forName: The notification name the object is observing
+         - object: The observer object that is requesting to listen to the notification
+         - using: Closure to be executed when the notification is posted
+     */
+     func add(forName name: String, object: AnyObject, using: @escaping (String) -> Void) {
+        
+       // guard let name =  names?[name] else { return }
+        names?[name]?.append(using)
+       
+     }
+
+     /**
+     Post a notification with the given name.
+     
+     - Parameters:
+         - name: The notification to post
+     */
+     func post(name: String) {
+         // TODO
+        let values = names?[name]
+        value(name)
+     }
+
+     /**
+     Remove the observer object from the given notification name
+     
+     - Parameters:
+         - forName: The notification name the object is observing
+         - object: The observer object that is requesting to no longer listen to the notification
+     */
+     func remove(forName name: String, object: AnyObject) {
+         // TODO
+         names[name] = nil
+     }
+
+ }
+
+
+
+
+ /*******************************************************************************
+ Example Usage
+ *******************************************************************************/
+
+ class SomeObject {
+ }
+
+ let center = FunkyNotificationCenter.defaultCenter
+
+ let objectA = SomeObject()
+ center.add(forName: "notificationEvent1", object: objectA) { _ in
+     print("Object A Event 1 happened")
+ }
+ center.add(forName: "notificationEvent2", object: objectA) { _ in
+     print("Object A Event 2 happened")
+ }
+
+ let objectB = SomeObject()
+ center.add(forName: "notificationEvent2", object: objectB) { _ in
+     print("Object B Event 2 happened")
+ }
+ center.add(forName: "notificationEvent3", object: objectB) { _ in
+     print("Object B Event 3 happened")
+ }
+
+ let objectC = SomeObject()
+ center.add(forName: "notificationEvent3", object: objectC) { _ in
+     print("Object C Event 3 happened")
+ }
+ center.add(forName: "notificationEvent1", object: objectC) { _ in
+     print("Object C Event 1 happened")
+ }
+
+ print("Before remove Object C Event 1")
+ center.post(name: "notificationEvent1")
+
+ center.remove(forName: "notificationEvent1", object: objectC)
+ print("After remove Object C Event 1")
+ center.post(name: "notificationEvent1")
+
+ /*
+ Desired output:
+
+ Before remove Object C Event 1
+ Object A Event 1 happened
+ Object C Event 1 happened
+ After remove Object C Event 1
+ Object A Event 1 happened
+ */
+ */
