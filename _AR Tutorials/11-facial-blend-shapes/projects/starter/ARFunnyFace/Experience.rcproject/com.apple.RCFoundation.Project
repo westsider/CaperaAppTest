@@ -1715,99 +1715,7 @@
               "material" : "concrete",
               "overrides" : {
                 "children" : {
-                  "5B7DCAC2-EF3C-4FAE-99FD-146D79574211" : {
-                    "overrides" : {
-                      "arguments" : [
-                        [
-                          "bevelRadius",
-                          {
-                            "typeName" : "Double",
-                            "value" : 1.0000000000000001e-05
-                          }
-                        ],
-                        [
-                          "diameter",
-                          {
-                            "typeName" : "Double",
-                            "value" : 0.01
-                          }
-                        ],
-                        [
-                          "height",
-                          {
-                            "typeName" : "Double",
-                            "value" : 0.01
-                          }
-                        ],
-                        [
-                          "material",
-                          {
-                            "typeName" : "String",
-                            "value" : "standard"
-                          }
-                        ],
-                        [
-                          "materialColor",
-                          {
-                            "typeName" : "double4",
-                            "value" : [
-                              0.40000000596046448,
-                              0.079999998211860657,
-                              0.079999998211860657,
-                              1
-                            ]
-                          }
-                        ],
-                        [
-                          "type",
-                          {
-                            "typeName" : "String",
-                            "value" : "cylinder"
-                          }
-                        ]
-                      ],
-                      "factory" : {
-                        "identifier" : "com.apple.rc.af.CoreAssetFactories.PrimitiveShapeAssetFactory",
-                        "version" : "1.0"
-                      },
-                      "runtimeAttributes" : [
-                        [
-                          "RuntimeIdentifier",
-                          {
-                            "typeName" : "UUID",
-                            "value" : "BC82A93B-B49E-44FB-9964-9FACEE1B21CE"
-                          }
-                        ],
-                        [
-                          "entityName",
-                          {
-                            "typeName" : "String",
-                            "value" : "Laser_R"
-                          }
-                        ]
-                      ]
-                    },
-                    "transform" : {
-                      "matrix" : [
-                        0.99756401777267456,
-                        -0.069756463170051575,
-                        0,
-                        0,
-                        0.069756463170051575,
-                        0.99756401777267456,
-                        0,
-                        0,
-                        0,
-                        0,
-                        0.99999994039535522,
-                        0,
-                        -0.029999999329447746,
-                        0.039999999105930328,
-                        -0.027499999850988388,
-                        1
-                      ]
-                    }
-                  },
+                  "5B7DCAC2-EF3C-4FAE-99FD-146D79574211" : null,
                   "06BC7C9F-30AB-44F8-B6D5-FC0DCC715563" : {
                     "overrides" : {
                       "arguments" : [
@@ -1830,9 +1738,9 @@
                           {
                             "typeName" : "double4",
                             "value" : [
-                              1,
-                              1,
-                              1,
+                              0.7758554220199585,
+                              0.7758554220199585,
+                              0.7758554220199585,
                               1
                             ]
                           }
@@ -1841,7 +1749,7 @@
                           "thickness",
                           {
                             "typeName" : "Double",
-                            "value" : 0.00167209673723248
+                            "value" : 0.0010155277863778068
                           }
                         ],
                         [
@@ -1887,9 +1795,9 @@
                         0,
                         1,
                         0,
-                        -0.014999999664723873,
+                        -0.0099999997764825821,
                         0.34000000357627869,
-                        -0.027499999850988388,
+                        -0.019999999552965164,
                         1
                       ]
                     }
@@ -1916,9 +1824,9 @@
                           {
                             "typeName" : "double4",
                             "value" : [
-                              1,
-                              1,
-                              1,
+                              0.7758554220199585,
+                              0.7758554220199585,
+                              0.7758554220199585,
                               1
                             ]
                           }
@@ -1927,7 +1835,7 @@
                           "thickness",
                           {
                             "typeName" : "Double",
-                            "value" : 0.00167209673723248
+                            "value" : 0.0010453733536938642
                           }
                         ],
                         [
@@ -1973,106 +1881,14 @@
                         0,
                         1,
                         0,
-                        0.014999999664723873,
+                        0.0099999997764825821,
                         0.3399999737739563,
-                        -0.027499999850988388,
+                        -0.019999999552965164,
                         1
                       ]
                     }
                   },
-                  "CC0AD704-E374-45F5-AD41-BCF111C7A7D7" : {
-                    "overrides" : {
-                      "arguments" : [
-                        [
-                          "bevelRadius",
-                          {
-                            "typeName" : "Double",
-                            "value" : 1.0000000000000001e-05
-                          }
-                        ],
-                        [
-                          "diameter",
-                          {
-                            "typeName" : "Double",
-                            "value" : 0.01
-                          }
-                        ],
-                        [
-                          "height",
-                          {
-                            "typeName" : "Double",
-                            "value" : 0.01
-                          }
-                        ],
-                        [
-                          "material",
-                          {
-                            "typeName" : "String",
-                            "value" : "paintEnamelMatte"
-                          }
-                        ],
-                        [
-                          "materialColor",
-                          {
-                            "typeName" : "double4",
-                            "value" : [
-                              0.69999998807907104,
-                              0.14000000059604645,
-                              0.14000000059604645,
-                              1
-                            ]
-                          }
-                        ],
-                        [
-                          "type",
-                          {
-                            "typeName" : "String",
-                            "value" : "cylinder"
-                          }
-                        ]
-                      ],
-                      "factory" : {
-                        "identifier" : "com.apple.rc.af.CoreAssetFactories.PrimitiveShapeAssetFactory",
-                        "version" : "1.0"
-                      },
-                      "runtimeAttributes" : [
-                        [
-                          "RuntimeIdentifier",
-                          {
-                            "typeName" : "UUID",
-                            "value" : "E05474AA-6548-4201-AF42-2EA7439C43DA"
-                          }
-                        ],
-                        [
-                          "entityName",
-                          {
-                            "typeName" : "String",
-                            "value" : "Laser_L"
-                          }
-                        ]
-                      ]
-                    },
-                    "transform" : {
-                      "matrix" : [
-                        0.99756407737731934,
-                        0.069756470620632172,
-                        0,
-                        0,
-                        -0.069756470620632172,
-                        0.99756407737731934,
-                        0,
-                        0,
-                        0,
-                        0,
-                        1,
-                        0,
-                        0.029999999329447746,
-                        0.039999999105930328,
-                        -0.027499999850988388,
-                        1
-                      ]
-                    }
-                  }
+                  "CC0AD704-E374-45F5-AD41-BCF111C7A7D7" : null
                 },
                 "factory" : null,
                 "runtimeAttributes" : [
@@ -2089,21 +1905,21 @@
               "title" : "Lazer",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99534201622009277,
-                  5.5879350924215032e-08,
-                  -0.096406273543834686,
+                  0.99999946355819702,
+                  5.5879354476928711e-08,
+                  -0.0009869597852230072,
                   0,
-                  0.044365718960762024,
-                  0.88781756162643433,
-                  0.45805186033248901,
+                  -9.6994721388909966e-05,
+                  0.99516075849533081,
+                  -0.09825974702835083,
                   0,
-                  0.085591211915016174,
-                  -0.46019542217254639,
-                  0.88368219137191772,
+                  0.00098217092454433441,
+                  0.098259806632995605,
+                  0.99516028165817261,
                   0,
-                  -0.0031581129878759384,
-                  -0.05446239560842514,
-                  0.52361214160919189,
+                  -0.0017074234783649445,
+                  0.032741650938987732,
+                  0.51482850313186646,
                   1
                 ],
                 "sceneTransform" : [

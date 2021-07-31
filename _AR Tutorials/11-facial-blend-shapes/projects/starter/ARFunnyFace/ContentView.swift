@@ -171,20 +171,23 @@ struct ARViewContainer: UIViewRepresentable {
             let roll = rotation.z*1.5
             
             
-            let yawS = String(format: "%.2f", -rotation.y*3 * 100.0)
-            let pitchS = String(format: "%.2f", -rotation.x*3  * 100.0)
-            let rollS =  String(format: "%.2f", rotation.z*1.5 * 100.0)
+            let yawS = String(format: "%.2f", -rotation.y*3 )
+            let pitchS = String(format: "%.2f", -rotation.x*3  )
+            let rollS =  String(format: "%.2f", rotation.z*1.5 )
             
-            if pitch > -0.03 && pitch < 0.00 {
+            if pitch > -0.005 && pitch < 0.005 {
                 print("\n--------> Pitch Locked <----------")
             }
-            
-            if yaw > -0.13 && yaw < 0.0 {
-                print("--------> Pan Locked <----------\n")
-            } else {
-                print("yaw: \(yawS), pitch: \(pitchS) roll: \(rollS)")
-            }
 
+            if yaw > -0.12 && yaw < -0.03 {
+                print("--------> Pan Locked <----------\n")
+            }
+//            else {
+//                print("yaw: \(yawS), pitch: \(pitchS) roll: \(rollS)")
+//            }
+
+            print("yaw: \(yawS), pitch: \(pitchS) roll: \(rollS)")
+            
             //MARK: - TODO - make the color change to green when OK
             //MARK: - TODO - add roll
             
