@@ -6,21 +6,13 @@
           "__content" : [
             {
               "arAnchorSpecification" : {
-                "name" : "object",
-                "url" : "arObject:c6365ffbd8816e8c0a84e6d726bf2109\/Scan_13-37-20.arobject"
+                "alignment" : "horizontal",
+                "name" : "surface"
               },
               "behaviors" : [
                 {
                   "__content" : [
                     {
-                      "accessibility" : {
-                        "__content" : [
-                          {
-                            "isEnabled" : false
-                          }
-                        ],
-                        "__version" : 1
-                      },
                       "actionGroups" : [
                         {
                           "__content" : [
@@ -95,19 +87,11 @@
                       ]
                     }
                   ],
-                  "__version" : 3
+                  "__version" : 2
                 },
                 {
                   "__content" : [
                     {
-                      "accessibility" : {
-                        "__content" : [
-                          {
-                            "isEnabled" : false
-                          }
-                        ],
-                        "__version" : 1
-                      },
                       "actionGroups" : [
                         {
                           "__content" : [
@@ -278,19 +262,11 @@
                       ]
                     }
                   ],
-                  "__version" : 3
+                  "__version" : 2
                 },
                 {
                   "__content" : [
                     {
-                      "accessibility" : {
-                        "__content" : [
-                          {
-                            "isEnabled" : false
-                          }
-                        ],
-                        "__version" : 1
-                      },
                       "actionGroups" : [
                         {
                           "__content" : [
@@ -485,19 +461,11 @@
                       ]
                     }
                   ],
-                  "__version" : 3
+                  "__version" : 2
                 },
                 {
                   "__content" : [
                     {
-                      "accessibility" : {
-                        "__content" : [
-                          {
-                            "isEnabled" : false
-                          }
-                        ],
-                        "__version" : 1
-                      },
                       "actionGroups" : [
                         {
                           "__content" : [
@@ -692,19 +660,11 @@
                       ]
                     }
                   ],
-                  "__version" : 3
+                  "__version" : 2
                 },
                 {
                   "__content" : [
                     {
-                      "accessibility" : {
-                        "__content" : [
-                          {
-                            "isEnabled" : false
-                          }
-                        ],
-                        "__version" : 1
-                      },
                       "actionGroups" : [
                         {
                           "__content" : [
@@ -899,7 +859,7 @@
                       ]
                     }
                   ],
-                  "__version" : 3
+                  "__version" : 2
                 }
               ],
               "gravity" : [
@@ -907,6 +867,7 @@
                 -9.8000001907348633,
                 0
               ],
+              "hasGroundPlane" : false,
               "identifier" : "0CE4536E-9743-4813-B80F-56A5356CD81E",
               "material" : "concrete",
               "overrides" : {
@@ -1408,36 +1369,26 @@
                   },
                   "E4035CB9-1F8A-4DC5-BF8C-0646840393DE" : null
                 },
-                "factory" : null,
-                "runtimeAttributes" : [
-                  [
-                    "isAccessibilityEnabled",
-                    {
-                      "typeName" : "Bool",
-                      "value" : false
-                    }
-                  ]
-                ]
+                "factory" : null
               },
-              "physicsMode" : "none",
               "title" : "Main",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.8547402024269104,
-                  -2.6077030312876559e-08,
-                  -0.51905590295791626,
+                  0.63073009252548218,
+                  -2.9802322387695312e-08,
+                  -0.77600222826004028,
                   0,
-                  -0.16014072299003601,
-                  0.95121687650680542,
-                  -0.2637067437171936,
+                  -0.3174615204334259,
+                  0.9124901294708252,
+                  -0.25803071260452271,
                   0,
-                  0.4937349259853363,
-                  0.30852353572845459,
-                  0.81304299831390381,
+                  0.70809435844421387,
+                  0.40909931063652039,
+                  0.57553458213806152,
                   0,
-                  0.15217356383800507,
-                  0.21465776860713959,
-                  0.35062292218208313,
+                  0.24504336714744568,
+                  0.25372293591499329,
+                  0.26939323544502258,
                   1
                 ],
                 "sceneTransform" : [
@@ -1461,7 +1412,7 @@
               }
             }
           ],
-          "__version" : 5
+          "__version" : 4
         }
       ],
       "tags" : {

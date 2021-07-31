@@ -73,10 +73,5 @@
     "libraryIdentifier" : "eb2315e7dadd24d83de1113854586bcf",
     "format" : "audio",
     "displayName" : "Snare.aifc"
-  },
-  {
-    "libraryIdentifier" : "2975da8cc45f28bc2d8b10fe73f34167",
-    "format" : "model",
-    "displayName" : "Kick.usdz"
   }
 ]

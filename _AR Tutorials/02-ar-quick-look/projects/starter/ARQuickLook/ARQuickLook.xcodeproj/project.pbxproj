@@ -13,8 +13,6 @@
 		835F6DB1213C2382007798DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835F6DB0213C2382007798DB /* Assets.xcassets */; };
 		835F6DB4213C2382007798DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835F6DB2213C2382007798DB /* LaunchScreen.storyboard */; };
 		835F6DBC213C2AC6007798DB /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835F6DBB213C2AC6007798DB /* GalleryTableViewCell.swift */; };
-		84975AA4259AA24600CDE671 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 84975AA3259AA24600CDE671 /* Models */; };
-		84975AA7259AA3FF00CDE671 /* Gramophone.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 84975AA6259AA3FF00CDE671 /* Gramophone.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +24,6 @@
 		835F6DB3213C2382007798DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		835F6DB5213C2382007798DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		835F6DBB213C2AC6007798DB /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
-		84975AA3259AA24600CDE671 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
-		84975AA6259AA3FF00CDE671 /* Gramophone.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Gramophone.usdz; path = ../../../final/ARQuickLook/ARQuickLook/Models/Gramophone.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +60,6 @@
 			children = (
 				835F6DA9213C2381007798DB /* AppDelegate.swift */,
 				835F6DAB213C2381007798DB /* ViewController.swift */,
-				84975AA6259AA3FF00CDE671 /* Gramophone.usdz */,
-				84975AA3259AA24600CDE671 /* Models */,
 				835F6DAD213C2381007798DB /* Main.storyboard */,
 				835F6DBB213C2AC6007798DB /* GalleryTableViewCell.swift */,
 				835F6DB0213C2382007798DB /* Assets.xcassets */,
@@ -135,9 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				835F6DB4213C2382007798DB /* LaunchScreen.storyboard in Resources */,
-				84975AA7259AA3FF00CDE671 /* Gramophone.usdz in Resources */,
 				835F6DB1213C2382007798DB /* Assets.xcassets in Resources */,
-				84975AA4259AA24600CDE671 /* Models in Resources */,
 				835F6DAF213C2381007798DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,7 +290,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22U4CL887R;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ARQuickLook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,7 +309,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22U4CL887R;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ARQuickLook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

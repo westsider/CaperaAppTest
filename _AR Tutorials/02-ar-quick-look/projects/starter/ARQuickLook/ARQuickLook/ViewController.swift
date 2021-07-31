@@ -31,13 +31,9 @@
 /// THE SOFTWARE.
 
 import UIKit
-import QuickLook
 
 class ViewController: UIViewController,
-                      UITableViewDataSource, UITableViewDelegate,
-                      QLPreviewControllerDelegate, QLPreviewControllerDataSource {
-
-  
+  UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet var tableView: UITableView!
 
@@ -59,17 +55,6 @@ class ViewController: UIViewController,
     tableView.dataSource = self
     tableView.delegate = self
     tableView.reloadData()
-    
-    if let fileURL = Bundle.main.url(forResource: "Models/" + modelNames[modelIndex], withExtension: "usdz") {
-        // we found the file in our bundle!
-      if let fileContents = try? String(contentsOf: fileURL) {
-        print("here is the url: \(fileURL) and contents \(fileContents)")
-      }
-     
-    } else {
-      print("failed to load assest")
-    }
-    
   }
   
   // MARK: - UITableViewDataSource
@@ -91,27 +76,9 @@ class ViewController: UIViewController,
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     modelIndex = indexPath.row
-    
-    // 1
-    let previewController = QLPreviewController()
-    // 2
-    previewController.dataSource = self
-    previewController.delegate = self
-    // 3
-    present(previewController, animated: false)
-
   }
   
   // MARK: - QLPreviewControllerDataSource
-  func numberOfPreviewItems(in controller: QLPreviewController) -> Int {
-    return 1
-  }
-  
-  func previewController(_ controller: QLPreviewController, previewItemAt index: Int) -> QLPreviewItem {
-    print("index \(modelIndex) and string \(modelNames[modelIndex])")
-    let url = Bundle.main.url(forResource: "Models/"+modelNames[modelIndex], withExtension: "usdz")!
-    return url as QLPreviewItem
-  }
   
 }
 
