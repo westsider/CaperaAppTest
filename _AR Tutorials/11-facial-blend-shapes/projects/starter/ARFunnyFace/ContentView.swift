@@ -35,7 +35,6 @@ import RealityKit
 import ARKit
 
 var arView: ARView!
-var robot: Experience.Robot!
 var lazer: Experience.Lazer!
 
 struct ContentView : View {
@@ -66,6 +65,24 @@ struct ContentView : View {
     }
 }
 
+class TextHelp {
+    static func makeText(textAnchor: Experience.Lazer, message: String) -> Experience.Lazer? {
+        print(message)
+        let textEntity: Entity =  (textAnchor.infoSign?.children[0].children[0])!
+        var textModelComponent: ModelComponent = (textEntity.components[ModelComponent])!
+        guard let myFont = UIFont(name: "Helvetica-Light", size: 0.05) else { return nil }
+
+        textModelComponent.mesh = .generateText(message,
+                                 extrusionDepth: 0.0,
+                                           font: myFont,
+                                 containerFrame: CGRect.zero,
+                                      alignment: .center,
+                                  lineBreakMode: .byCharWrapping)
+        textAnchor.infoSign?.children[0].children[0].components.set(textModelComponent)
+        return textAnchor
+    }
+}
+
 struct ARViewContainer: UIViewRepresentable {
     
     @Binding var propId: Int
@@ -77,8 +94,7 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-            
-            robot = nil
+ 
             arView.scene.anchors.removeAll()
             
             let arConfiguration = ARFaceTrackingConfiguration()
@@ -87,26 +103,7 @@ struct ARViewContainer: UIViewRepresentable {
             let arAnchor = try! Experience.loadLazer()
             uiView.scene.anchors.append(arAnchor)
             lazer = arAnchor
-            makeText(textAnchor: arAnchor, message: "LOADED")
-        }
-    
-    func makeText(textAnchor: Experience.Lazer, message: String) {
-            print(message)
-            let textEntity: Entity =  (textAnchor.infoSign?.children[0].children[0])!
-            var textModelComponent: ModelComponent = (textEntity.components[ModelComponent])!
-            guard let myFont = UIFont(name: "Helvetica-Light", size: 0.05) else { return }
-
-            textModelComponent.mesh = .generateText(message,
-                                     extrusionDepth: 0.0,
-                                               font: myFont,
-                                     containerFrame: CGRect.zero,
-                                          alignment: .center,
-                                      lineBreakMode: .byCharWrapping)
-             
-            
-            textAnchor.infoSign?.children[0].children[0].components.set(textModelComponent)
-          
-            arView.scene.anchors.append(textAnchor)
+            _ = TextHelp.makeText(textAnchor: lazer, message: "LOADED")
         }
     
     func makeCoordinator() -> ARDelegateHandler {
@@ -155,11 +152,11 @@ struct ARViewContainer: UIViewRepresentable {
             var tilt = false
             var rolly = false
 
-            if pitch > -0.03 && pitch < 0.03 {
+            if pitch > -0.02 && pitch < 0.02 {
                 tilt = true
             } else { tilt = false }
 
-            if yaw > -0.12 && yaw < -0.03 {
+            if yaw > -0.12 && yaw < -0.0 {
                 pan = true
             } else { pan = false }
             
@@ -169,9 +166,15 @@ struct ARViewContainer: UIViewRepresentable {
             
             if pan && tilt && rolly {
                 print("LOCKED")
+                _ = TextHelp.makeText(textAnchor: lazer, message: "LOCKED")
             } else {
-                print("ADJUST: \(pan ? "" : "pan \(yawS)") \(tilt ? "" : "tilt") \(rolly ? "" : "roll")")
+                let message = String("\(pan ? "" : "yaw \(yawS)") \(tilt ? "" : "\npitch \(pitchS)") \(rolly ? "" : "\nroll \(rollS)")")
+                print(message)
+                _ = TextHelp.makeText(textAnchor: lazer, message: message)
             }
+            
+            //_ = TextHelp.makeText(textAnchor: lazer, message: pitchS)
+            
             func Deg2Rad(_ value: Float) -> Float {
               return value * .pi / 180
             }
