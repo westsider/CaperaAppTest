@@ -96,40 +96,29 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
-        
-        robot = nil
+         
         arView.scene.anchors.removeAll()
         
         let arConfiguration = ARFaceTrackingConfiguration()
         uiView.session.run(arConfiguration, options:[.resetTracking, .removeExistingAnchors])
         
-        switch(propId) {
-        case 0: // Eyes
-            let arAnchor = try! Experience.loadLazer()
-            uiView.scene.anchors.append(arAnchor)
-            lazer = arAnchor
-            //print(lazer.circleL?.anchor?.components)
-            break
-        case 1: // Glasses
-            let arAnchor = try! Experience.loadGlasses()
-            uiView.scene.anchors.append(arAnchor)
-            break
-        case 2: // Mustache
-            let arAnchor = try! Experience.loadMustache()
-            uiView.scene.anchors.append(arAnchor)
-            break
-        case 3: // Robot
-            let arAnchor = try! Experience.loadRobot()
-            uiView.scene.anchors.append(arAnchor)
-            robot = arAnchor
-            break
-        case 4:
-            let arAnchor = try! Experience.loadEyes()
-            uiView.scene.anchors.append(arAnchor)
-            break
-        default:
-            break
-        }
+        let arAnchor = try! Experience.loadLazer()
+        uiView.scene.anchors.append(arAnchor)
+        makeText(textAnchor: arAnchor)
+    }
+    
+    func makeText(textAnchor: Experience.Lazer) { 
+        let textEntity: Entity =  (textAnchor.infoSign?.children[0].children[0])!
+        var textModelComponent: ModelComponent = (textEntity.components[ModelComponent])!
+        textModelComponent.mesh = .generateText("Hello, World!",
+                                 extrusionDepth: 0.0,
+                                           font: .systemFont(ofSize: 0.04),
+                                 containerFrame: CGRect.zero,
+                                      alignment: .center,
+                                  lineBreakMode: .byCharWrapping)
+     
+        textAnchor.infoSign?.children[0].children[0].components.set(textModelComponent)
+        arView.scene.anchors.append(textAnchor)
     }
     
     func makeCoordinator() -> ARDelegateHandler {
@@ -178,6 +167,9 @@ struct ARViewContainer: UIViewRepresentable {
             var pan = false
             var tilt = false
             var rolly = false
+            
+            
+            
             
             if pitch > -0.03 && pitch < 0.03 {
                 tilt = true

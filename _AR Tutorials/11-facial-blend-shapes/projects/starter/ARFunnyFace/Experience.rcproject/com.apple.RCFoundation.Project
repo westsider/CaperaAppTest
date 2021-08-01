@@ -1730,7 +1730,7 @@
                           "material",
                           {
                             "typeName" : "String",
-                            "value" : "standard"
+                            "value" : "aluminumBlasted"
                           }
                         ],
                         [
@@ -1749,7 +1749,7 @@
                           "thickness",
                           {
                             "typeName" : "Double",
-                            "value" : 0.0010155277863778068
+                            "value" : 0.0010155277863778066
                           }
                         ],
                         [
@@ -1802,6 +1802,163 @@
                       ]
                     }
                   },
+                  "411BDF89-FA96-458E-A2DA-67782E53CDB3" : {
+                    "overrides" : {
+                      "arguments" : [
+                        [
+                          "boundHeight",
+                          {
+                            "typeName" : "Double",
+                            "value" : 1.5
+                          }
+                        ],
+                        [
+                          "boundWidth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 6
+                          }
+                        ],
+                        [
+                          "depth",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.22
+                          }
+                        ],
+                        [
+                          "font",
+                          {
+                            "typeName" : "String",
+                            "value" : "Helvetica"
+                          }
+                        ],
+                        [
+                          "hasBackground",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "height",
+                          {
+                            "typeName" : "Double",
+                            "value" : 0.042166276271330877
+                          }
+                        ],
+                        [
+                          "horizontalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "center"
+                          }
+                        ],
+                        [
+                          "material",
+                          {
+                            "typeName" : "String",
+                            "value" : "aluminumBlasted"
+                          }
+                        ],
+                        [
+                          "materialColor",
+                          {
+                            "typeName" : "double4",
+                            "value" : [
+                              1,
+                              1,
+                              1,
+                              1
+                            ]
+                          }
+                        ],
+                        [
+                          "oneLine",
+                          {
+                            "typeName" : "Bool",
+                            "value" : false
+                          }
+                        ],
+                        [
+                          "precision",
+                          {
+                            "typeName" : "String",
+                            "value" : "normal"
+                          }
+                        ],
+                        [
+                          "text",
+                          {
+                            "typeName" : "String",
+                            "value" : "LOCKED"
+                          }
+                        ],
+                        [
+                          "verticalAlignment",
+                          {
+                            "typeName" : "String",
+                            "value" : "bottom"
+                          }
+                        ],
+                        [
+                          "verticalPosition",
+                          {
+                            "typeName" : "String",
+                            "value" : "middle"
+                          }
+                        ],
+                        [
+                          "wordWrap",
+                          {
+                            "typeName" : "Bool",
+                            "value" : true
+                          }
+                        ]
+                      ],
+                      "factory" : {
+                        "identifier" : "com.apple.rc.af.CoreAssetFactories.Text",
+                        "version" : "0.0"
+                      },
+                      "runtimeAttributes" : [
+                        [
+                          "RuntimeIdentifier",
+                          {
+                            "typeName" : "UUID",
+                            "value" : "D36C7FDE-4E1E-4AE9-8F05-F59BCC9744D3"
+                          }
+                        ],
+                        [
+                          "entityName",
+                          {
+                            "typeName" : "String",
+                            "value" : "infoSign"
+                          }
+                        ]
+                      ]
+                    },
+                    "transform" : {
+                      "matrix" : [
+                        0.99999988079071045,
+                        0,
+                        0,
+                        0,
+                        0,
+                        5.9604641222676946e-08,
+                        -0.99999994039535522,
+                        0,
+                        0,
+                        0.99999982118606567,
+                        5.9604634117249589e-08,
+                        0,
+                        0.0011818548664450645,
+                        0.038759846240282059,
+                        -0.18029515445232391,
+                        1
+                      ]
+                    }
+                  },
+                  "A9538D27-91EA-44D5-9877-E5D129235F58" : null,
                   "A13937F2-027C-4BCF-B970-AA1452EA19CE" : {
                     "overrides" : {
                       "arguments" : [
@@ -1816,7 +1973,7 @@
                           "material",
                           {
                             "typeName" : "String",
-                            "value" : "standard"
+                            "value" : "aluminumBlasted"
                           }
                         ],
                         [
@@ -1835,7 +1992,7 @@
                           "thickness",
                           {
                             "typeName" : "Double",
-                            "value" : 0.0010453733536938642
+                            "value" : 0.001045373353693864
                           }
                         ],
                         [
@@ -1888,7 +2045,8 @@
                       ]
                     }
                   },
-                  "CC0AD704-E374-45F5-AD41-BCF111C7A7D7" : null
+                  "CC0AD704-E374-45F5-AD41-BCF111C7A7D7" : null,
+                  "D912318D-04AF-468B-85D0-AC670881911D" : null
                 },
                 "factory" : null,
                 "runtimeAttributes" : [
@@ -1905,21 +2063,21 @@
               "title" : "Lazer",
               "viewTransform" : {
                 "cameraTransform" : [
-                  0.99999946355819702,
-                  5.5879354476928711e-08,
-                  -0.0009869597852230072,
+                  0.98359864950180054,
+                  5.4016712880411433e-08,
+                  0.18037079274654388,
                   0,
-                  -9.6994721388909966e-05,
-                  0.99516075849533081,
-                  -0.09825974702835083,
+                  -0.018245089799165726,
+                  0.99487084150314331,
+                  0.099494121968746185,
                   0,
-                  0.00098217092454433441,
-                  0.098259806632995605,
-                  0.99516028165817261,
+                  -0.17944557964801788,
+                  -0.10115320980548859,
+                  0.9785536527633667,
                   0,
-                  -0.0017074234783649445,
-                  0.032741650938987732,
-                  0.51482850313186646,
+                  -0.00037117674946784973,
+                  0.022388428449630737,
+                  0.45780488848686218,
                   1
                 ],
                 "sceneTransform" : [
