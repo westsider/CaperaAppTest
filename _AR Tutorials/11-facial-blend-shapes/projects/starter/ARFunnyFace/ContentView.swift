@@ -46,32 +46,13 @@ struct ContentView : View {
         ZStack(alignment: .bottom) {
             ARViewContainer(propId: $propId).edgesIgnoringSafeArea(.all)
             HStack {
-                
                 Spacer()
-                
-                Button(action: {
-                    self.propId = self.propId <= 0 ? 0 : self.propId - 1
-                }) {
-                    Image("PreviousButton").clipShape(Circle())
-                }
-                
-                Spacer()
-                
                 Button(action: {
                     self.TakeSnapshot()
                 }) {
                     Image("ShutterButton")
                         .clipShape(Circle())
                 }
-                
-                Spacer()
-                
-                Button(action: {
-                    self.propId = self.propId >= 4 ? 4 : self.propId + 1
-                }) {
-                    Image("NextButton").clipShape(Circle())
-                }
-                
                 Spacer()
             }
         }
@@ -106,8 +87,7 @@ struct ARViewContainer: UIViewRepresentable {
             let arAnchor = try! Experience.loadLazer()
             uiView.scene.anchors.append(arAnchor)
             lazer = arAnchor
-            makeText(textAnchor: arAnchor, message: "Loading")
-   
+            makeText(textAnchor: arAnchor, message: "LOADED")
         }
     
     func makeText(textAnchor: Experience.Lazer, message: String) {
@@ -115,7 +95,7 @@ struct ARViewContainer: UIViewRepresentable {
             let textEntity: Entity =  (textAnchor.infoSign?.children[0].children[0])!
             var textModelComponent: ModelComponent = (textEntity.components[ModelComponent])!
             guard let myFont = UIFont(name: "Helvetica-Light", size: 0.05) else { return }
-            
+
             textModelComponent.mesh = .generateText(message,
                                      extrusionDepth: 0.0,
                                                font: myFont,
