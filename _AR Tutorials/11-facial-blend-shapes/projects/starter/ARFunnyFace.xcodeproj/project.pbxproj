@@ -13,6 +13,7 @@
 		8323EDAB2438DB6B00221CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8323EDAA2438DB6B00221CC5 /* Assets.xcassets */; };
 		8323EDAE2438DB6B00221CC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8323EDAD2438DB6B00221CC5 /* Preview Assets.xcassets */; };
 		8323EDB12438DB6B00221CC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8323EDAF2438DB6B00221CC5 /* LaunchScreen.storyboard */; };
+		84F6C9F526B8983300859118 /* DrawBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6C9F426B8983300859118 /* DrawBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8323EDAD2438DB6B00221CC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8323EDB02438DB6B00221CC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8323EDB22438DB6B00221CC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F6C9F426B8983300859118 /* DrawBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				8323EDA62438DB6900221CC5 /* ContentView.swift */,
+				84F6C9F426B8983300859118 /* DrawBox.swift */,
 				8323EDA82438DB6900221CC5 /* Experience.rcproject */,
 				8323EDAA2438DB6B00221CC5 /* Assets.xcassets */,
 				8323EDAF2438DB6B00221CC5 /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				8323EDA72438DB6900221CC5 /* ContentView.swift in Sources */,
 				8323EDA52438DB6900221CC5 /* AppDelegate.swift in Sources */,
 				8323EDA92438DB6900221CC5 /* Experience.rcproject in Sources */,
+				84F6C9F526B8983300859118 /* DrawBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,26 +33,64 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import CoreMotion
 
 var arView: ARView!
 var lazer: Experience.Lazer!
+var bkg: Experience.Background!
 
 struct ContentView : View {
     
     @State var propId: Int = 0
+    let manager = CMMotionManager()
+    @State var degree: String = "NA"
     
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(propId: $propId).edgesIgnoringSafeArea(.all)
+                .overlay(
+                    VStack {
+                        Circle()
+                            .stroke(Color.gray, lineWidth: 5)
+                            .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .opacity(0.5)
+                    }
+                )
             HStack {
                 Spacer()
-                Button(action: {
-                    self.TakeSnapshot()
-                }) {
-                    Image("ShutterButton")
-                        .clipShape(Circle())
-                }
+                Text(degree)
+                    .font(.body)
+                    .foregroundColor(Color.gray)
+                    .onAppear() {
+                        getDegrees { deg in
+                            if let d = deg {
+                                self.degree = "⏄ \(d)°"
+                            }
+                        }
+                    }
                 Spacer()
+            }
+        }
+    }
+    
+    func getDegrees (completion: @escaping (String?) -> Void) {
+        if manager.isDeviceMotionAvailable {
+            manager.deviceMotionUpdateInterval = 0.01
+            manager.startDeviceMotionUpdates(to: OperationQueue.main) {
+                (data, error) in
+                if let error = error {
+                    completion("Error \(error.localizedDescription)")
+                }
+                
+                if let data = data {
+                    let attitude = data.attitude
+                    let tiltForwardBackward = attitude.pitch * 180.0 / .pi
+                    let rotS = String(format: "%.1f", tiltForwardBackward )
+                    DispatchQueue.main.async {
+                        completion(rotS)
+                    }
+                    
+                }
             }
         }
     }
@@ -71,15 +109,33 @@ class TextHelp {
         let textEntity: Entity =  (textAnchor.infoSign?.children[0].children[0])!
         var textModelComponent: ModelComponent = (textEntity.components[ModelComponent])!
         guard let myFont = UIFont(name: "Helvetica-Light", size: 0.05) else { return nil }
-
+        
         textModelComponent.mesh = .generateText(message,
-                                 extrusionDepth: 0.0,
-                                           font: myFont,
-                                 containerFrame: CGRect.zero,
-                                      alignment: .center,
-                                  lineBreakMode: .byCharWrapping)
+                                                extrusionDepth: 0.0,
+                                                font: myFont,
+                                                containerFrame: CGRect.zero,
+                                                alignment: .center,
+                                                lineBreakMode: .byCharWrapping)
         textAnchor.infoSign?.children[0].children[0].components.set(textModelComponent)
         return textAnchor
+    }
+    
+    
+    static func getDegrees() -> String {
+        let manager = CMMotionManager()
+        var angle = "NA"
+        if manager.isDeviceMotionAvailable {
+            manager.deviceMotionUpdateInterval = 0.01
+            manager.startDeviceMotionUpdates(to: OperationQueue.main) {
+                (data, error) in
+                if let data = data {
+                    let rotation = atan2(data.gravity.x, data.gravity.y) - .pi
+                    let rotS = String(rotation)
+                    angle =  rotS
+                }
+            }
+        }
+        return angle
     }
 }
 
@@ -94,23 +150,25 @@ struct ARViewContainer: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: ARView, context: Context) {
- 
-            arView.scene.anchors.removeAll()
-            
-            let arConfiguration = ARFaceTrackingConfiguration()
-            uiView.session.run(arConfiguration, options:[.resetTracking, .removeExistingAnchors])
-       
-            let arAnchor = try! Experience.loadLazer()
-            uiView.scene.anchors.append(arAnchor)
-            lazer = arAnchor
-            _ = TextHelp.makeText(textAnchor: lazer, message: "LOADED")
-        }
+        
+        arView.scene.anchors.removeAll()
+        
+        let arConfiguration = ARFaceTrackingConfiguration()
+        uiView.session.run(arConfiguration, options:[.resetTracking, .removeExistingAnchors])
+        
+        let arAnchor = try! Experience.loadLazer()
+        
+        uiView.scene.anchors.append(arAnchor)
+        lazer = arAnchor
+        _ = TextHelp.makeText(textAnchor: lazer, message: "LOADED")
+        
+        let bkg = try! Experience.loadBackground()
+        uiView.scene.anchors.append(bkg)
+    }
     
     func makeCoordinator() -> ARDelegateHandler {
         ARDelegateHandler(self)
     }
-    
-
     
     class ARDelegateHandler: NSObject, ARSessionDelegate {
         
@@ -124,7 +182,7 @@ struct ARViewContainer: UIViewRepresentable {
         func session(_ session: ARSession, didUpdate anchors: [ARAnchor]) {
             
             guard lazer != nil else { return }
-
+            
             let arFrame = session.currentFrame!
             guard let faceAnchor = arFrame.anchors[0] as? ARFaceAnchor else { return }
             let projectionMatrix = arFrame.camera.projectionMatrix(for: .portrait, viewportSize: arView.bounds.size, zNear: 0.001, zFar: 1000)
@@ -143,7 +201,7 @@ struct ARViewContainer: UIViewRepresentable {
             let yaw = -rotation.y*3
             let pitch = -rotation.x*3
             let roll = rotation.z*1.5
-    
+            
             let yawS = String(format: "%.2f", -rotation.y*3 )
             let pitchS = String(format: "%.2f", -rotation.x*3  )
             let rollS =  String(format: "%.2f", rotation.z*1.5 )
@@ -151,11 +209,11 @@ struct ARViewContainer: UIViewRepresentable {
             var pan = false
             var tilt = false
             var rolly = false
-
+            
             if pitch > -0.02 && pitch < 0.02 {
                 tilt = true
             } else { tilt = false }
-
+            
             if yaw > -0.12 && yaw < -0.0 {
                 pan = true
             } else { pan = false }
@@ -168,7 +226,7 @@ struct ARViewContainer: UIViewRepresentable {
                 print("LOCKED")
                 _ = TextHelp.makeText(textAnchor: lazer, message: "LOCKED")
             } else {
-                let message = String("\(pan ? "" : "yaw \(yawS)") \(tilt ? "" : "\npitch \(pitchS)") \(rolly ? "" : "\nroll \(rollS)")")
+                let message =  String("\(pan ? "" : "yaw \(yawS)") \(tilt ? "" : "\npitch \(pitchS)") \(rolly ? "" : "\nroll \(rollS)")")
                 print(message)
                 _ = TextHelp.makeText(textAnchor: lazer, message: message)
             }
@@ -176,7 +234,7 @@ struct ARViewContainer: UIViewRepresentable {
             //_ = TextHelp.makeText(textAnchor: lazer, message: pitchS)
             
             func Deg2Rad(_ value: Float) -> Float {
-              return value * .pi / 180
+                return value * .pi / 180
             }
         }
     }
@@ -193,10 +251,10 @@ struct ContentView_Previews : PreviewProvider {
 extension SCNGeometry {
     class func lineFrom(vector vector1: SCNVector3, toVector vector2: SCNVector3) -> SCNGeometry {
         let indices: [Int32] = [0, 1]
-
+        
         let source = SCNGeometrySource(vertices: [vector1, vector2])
         let element = SCNGeometryElement(indices: indices, primitiveType: .line)
-
+        
         return SCNGeometry(sources: [source], elements: [element])
     }
 }
@@ -210,7 +268,7 @@ class HHelper {
         let y1 = vector2.y
         let z0 = vector1.z
         let z1 = vector2.z
-
+        
         return sqrtf(powf(x1-x0, 2) + powf(y1-y0, 2) + powf(z1-z0, 2))
     }
 }
